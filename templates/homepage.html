@@ -3,14 +3,12 @@
 {% block title %}Cocktails Homepage{% endblock %}
 
 {% block content %}
-
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-        {% for cocktail in cocktails %}
-            <div class="col">
-                {% include 'card.html' %}
-            </div>
-        {% endfor %}
-    </div>
-
+<div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center text-center">
+    {% for cocktail in cocktails %}
+        <div class="col text-center">
+            {% include 'card.html' %}
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
