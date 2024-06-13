@@ -1,0 +1,40 @@
+{% block content %}
+    <div class="bg-primary w-75 card shadow rounded">
+
+        <div class="mb-3">
+            {% if cocktail.img %}
+                <img src="{{ url_for('static', filename=cocktail.img) }}" alt="{{ cocktail.name }}" class="card-img-top">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+        </div>
+        <div class=" px-2 py-2">
+            <h2 class="fw-semibold fs-3 text-white">{{ cocktail.name }}</h2>
+
+            <div class="d-flex justify-content-between mt-3">
+                   <p class="d-flex bg-white rounded-3 p-2">
+                       <strong>
+                            <span class="
+                                {% if cocktail.difficulty.lower() == 'easy' %}
+                                    text-success
+                                {% elif cocktail.difficulty.lower() == 'medium' %}
+                                    text-warning
+                                {% elif cocktail.difficulty.lower() == 'hard' %}
+                                    text-danger
+                                {% endif %}
+                            ">
+                                 {{ cocktail.difficulty }}
+                            </span>
+                       </strong>
+                    </p>
+                   <a href="/{{cocktail.id}}" class="d-flex bg-success text-white justify-content-center align-items-center rounded-3 p-2 text-decoration-none no-underline ">
+                    <p class="m-0 fw-bold">Details &gt;</p>
+                  </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+{% endblock %}

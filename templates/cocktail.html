@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Cocktails Homepage{% endblock %}
+
+{% block content %}
+    <div class="w-100 d-flex flex-column align-items-center p-4 ">
+
+         <div class="d-flex justify-content-center align-items-center shadow" style="width: 50%; height: 50%; overflow: hidden;">
+            {% if cocktail.img %}
+                <img src="{{ url_for('static', filename=cocktail.img) }}" class="img-fluid rounded-3" alt="{{ cocktail.name }}">
+            {% else %}
+                <p class="text-center text-white">No image available</p>
+            {% endif %}
+        </div>
+        <div class="mt-2 bg-primary w-50 rounded-3 p-3">
+            <h1 class="text-white">{{cocktail.name}}</h1>
+        </div>
+
+          <div class="mt-2 bg-primary w-50 rounded-3 p-4">
+
+             <h2 class="text-white fw-bold">Story</h2>
+             <p class="text-white ">
+                 {{cocktail.story}}
+             </p>
+        </div>
+        <div class="d-flex flex-column mt-2 bg-warning w-50 rounded-3 p-2">
+
+            <p class="w-25 d-flex align-self-start justify-content-center bg-white rounded-3 p-2 fs-4">
+                       <strong>
+                            <span class="
+                                {% if cocktail.difficulty.lower() == 'easy' %}
+                                    text-success
+                                {% elif cocktail.difficulty.lower() == 'medium' %}
+                                    text-warning
+                                {% elif cocktail.difficulty.lower() == 'hard' %}
+                                    text-danger
+                                {% endif %}
+                            ">
+                                 {{ cocktail.difficulty }}
+                            </span>
+                       </strong>
+                    </p>
+
+            <div class="d-flex justify-content-center fs-4 ">
+                <ul class="">
+                    {% for ingredient in cocktail.ingredients %}
+                        <div class="row my-1 fw-semibold">
+                            <div class="col-7 bg-primary py-2 px-3 rounded-start-pill text-white">{{ ingredient.name }}</div><div class="col-5 bg-white p-2 rounded-end-pill">{{ ingredient.quantity }} {{ingredient.scale}}</div>
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+        </div>
+
+         <div class="mt-2 bg-success w-50 rounded-3 p-4">
+
+             <h2 class="text-white fw-bold">Tutorial</h2>
+             <p class="text-white ">
+                 {{cocktail.tutorial}}
+             </p>
+        </div>
+
+    </div>
+{% endblock %}
