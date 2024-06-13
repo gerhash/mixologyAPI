@@ -359,7 +359,6 @@ A few years after Gruber's recipe we already move on to the first change of ingr
         "story": "The Boulevardier is a classic cocktail that dates back to the 1920s and is often considered a cousin of the Negroni. Its name translates to 'man about town' in French, reflecting its sophisticated and bold flavors. The cocktail is typically made with bourbon whiskey, sweet vermouth, and Campari, giving it a balance of sweetness, bitterness, and complexity. The Boulevardier has enjoyed a resurgence in popularity among cocktail enthusiasts who appreciate its robust flavor profile and timeless appeal.",
         "difficulty": "Medium"
     }
-
 ]
 
 
