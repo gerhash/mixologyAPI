@@ -1,3 +1,4 @@
+<img src="https://github.com/gerhash/mixologyAPI/assets/62940515/34d5eb99-d4d1-4e07-b397-fa600cac7673" alt="Mixology" width="100" height="100"/>
 
 # Mixology API - Cocktail's Api with tutorial & story
 <img src="https://skillicons.dev/icons?i=py,flask,html,css,js,bootstrap" alt="Skills" />
