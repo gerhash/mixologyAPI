@@ -17,22 +17,9 @@ def homepage():
 
         all_cocktails = response.json()
 
-        # Set to store unique ingredient names
-        unique_ingredients = set()
-
-        # Iterate over each cocktail and its ingredients
-        for cocktail in all_cocktails:
-            for ingredient in cocktail.get('ingredients', []):
-                # Get ingredient name and capitalize the first letter
-                ingredient_name = ingredient.get('name', '').capitalize()
-                # Add the ingredient name to the set (avoids duplicates)
-                unique_ingredients.add(ingredient_name)
-
-        # Convert set to sorted list of unique ingredient names
-        sorted_unique_ingredients = sorted(unique_ingredients)
 
         # Render the homepage.html template with cocktails data and unique ingredients
-        return render_template('homepage.html', cocktails=all_cocktails, ingredients=sorted_unique_ingredients)
+        return render_template('homepage.html', cocktails=all_cocktails)
 
     except requests.exceptions.RequestException as e:
         # Handle connection or HTTP request errors
